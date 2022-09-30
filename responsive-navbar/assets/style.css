@@ -71,6 +71,7 @@ header {
   .hamburger {
     display: block;
     cursor: pointer;
+    border: solid red;
   }
 
   .hamburger .line {
@@ -85,19 +86,10 @@ header {
   .hamburger.active .line:nth-child(1) {
     display: block;
     position: absolute;
-    width: 30px;
-    height: 3px;
-    background-color: #fefefe;
-    margin: 6px 0;
     transform: rotate(135deg);
   }
 
   .hamburger.active .line:nth-child(3) {
-    display: block;
-    width: 30px;
-    height: 3px;
-    background-color: #fefefe;
-    margin: 6px 0;
     transform: rotate(-135deg);
   }
 
@@ -105,7 +97,6 @@ header {
     position: absolute;
     z-index: -999;
     transform: scale(0.5);
-    transition: 1s;
   }
 
   .nav-bar {
