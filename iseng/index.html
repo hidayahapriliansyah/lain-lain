@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iseng. Bikin apa ya?</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+      }
+
+      body {
+        background-image: url('img/image2.jpg');
+        background-repeat: none;
+        background-size: cover;
+        background-position: left;
+        overflow: hidden;
+      }
+
+      main {
+        width: 100vw;
+        height: 100vh;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        backdrop-filter: blur(4px);
+        /* background-color: rgba(0, 0, 0, 0.3); */
+      }
+
+      .container {
+        width: fit-content;
+        height: fit-content;
+        padding: 50px;
+        border-radius: 1em;
+      }
+
+      .glass {
+        /* background-color: rgba(250, 235, 215, 0.2); */
+        backdrop-filter: blur(50px);
+        border-right: rgb(255, 255, 255, 0.2) 1px solid;
+        border-bottom: rgb(255, 255, 255, 0.2) 1px solid;
+        border-left: rgb(0, 0, 0, 0.2) 1px solid;
+        border-top: rgb(0, 0, 0, 0.2) 1px solid;
+        box-shadow: 5px 5px 5px rgb(0, 0, 0, 0.2);
+      }
+
+      .title {
+        display: block;
+        font-size: 28px;
+        margin-bottom: 20px;
+        color: rgb(255, 255, 255);
+      }
+
+      button {
+        width: 100px;
+        height: 30px;
+        font-size: 16px;
+        border-radius: 0.5em;
+        border-style: none;
+        margin: 0 10px;
+        background-color: rgb(252, 198, 23);
+      }
+
+      button:hover {
+        cursor: pointer;
+      }
+
+      .answer div {
+        display: inline-block;
+        width: 110px;
+        height: fit-content;
+        background-color: rebeccapurple;
+      }
+
+      .answer .no {
+        background-color: rgb(16, 16, 82);
+        margin: auto;
+      }
+
+      .answer .no:hover {
+        background-color: rgb(16, 16, 82);
+      }
+
+      .answer .yes {
+        position: relative;
+        margin: auto;
+      }
+
+      .answer .yes:hover {
+        background-color: rgb(196, 150, 0);
+      }
+
+      .response {
+        display: none;
+      }
+
+      .response.active {
+        position: absolute;
+        width: 100vw;
+        height: 100vh;
+        overflow: visible;
+        background-color: aliceblue;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 0.5s;
+      }
+
+      .close-btn {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: red;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        border-radius: 1em;
+      }
+
+      .close-btn ul {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .close-btn li {
+        width: 40px;
+        height: 5px;
+        background-color: black;
+        position: absolute;
+        border-radius: 1em;
+      }
+
+      .close-btn .line1 {
+        transform: rotate(45deg);
+      }
+
+      .close-btn .line2 {
+        transform: rotate(135deg);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="container glass">
+        <h1 class="title">Apakah kamu mencintaiku?</h1>
+        <section class="answer">
+          <div class="no-btn">
+            <button class="no" onclick="rejectResponse(this)">Tidak</button>
+          </div>
+          <div class="yes-btn">
+            <button class="yes" onclick="showResponse()">Iya</button>
+          </div>
+        </section>
+      </div>
+      <div class="response">
+        <div class="close-btn" onclick="removeActive()">
+          <ul>
+            <li class="line1"></li>
+            <li class="line2"></li>
+          </ul>
+        </div>
+        <h1>Awww ... terimakasih!</h1>
+      </div>
+    </main>
+    <script>
+      const closeBtn = document.querySelector('.close-button');
+      const responseSection = document.querySelector('.response');
+      const removeActive = () => {
+        responseSection.classList.remove('active');
+      };
+
+      const showResponse = () => {
+        responseSection.classList.add('active');
+      };
+
+      function rejectResponse(el) {
+        let css = el.style;
+        let randomPosition = Math.floor(Math.random() * 75) + 10;
+        css.position = 'absolute';
+        css.top = `${randomPosition}%`;
+        css.left = `${randomPosition}%`;
+        console.log(randomPosition);
+      }
+    </script>
+  </body>
+</html>
