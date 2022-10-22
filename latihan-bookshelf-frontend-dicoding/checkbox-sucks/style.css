@@ -1,0 +1,50 @@
+.mark {
+  margin-bottom: 5px;
+  margin-top: 5px;
+  background-color: #FFFFFF;
+  border-width: 2px;
+  border-radius: 0px 5px 5px 0px;
+  border-left-style: solid;
+  border-left-width: 10px;
+  border-color: lime;
+  overflow: auto;
+  padding: 2%;
+  transition: background-color 0.5s linear 0s;
+  cursor: pointer;
+}
+
+.checked {
+  background-color: #66ff66;
+}
+
+.mark:hover {
+  background-color: #fffcaf;
+}
+
+.checked:hover {
+  background-color: #b3ffb3;
+}
+
+.flex-container {
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  margin: 0px;
+  padding: 0px;
+}
+
+.flex-mark {
+  width: 85%;
+  margin: 0px;
+}
+
+.flex-tick {
+  width: 15%;
+  margin: 0px;
+  text-align: center;
+}
+
+.flex-tick input {
+  width: 40px;
+  height: 40px;
+}

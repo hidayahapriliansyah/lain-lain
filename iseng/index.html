@@ -14,7 +14,7 @@
       }
 
       body {
-        background-image: url('img/image2.jpg');
+        background-image: url('img/image.gif');
         background-repeat: none;
         background-size: cover;
         background-position: left;
@@ -29,15 +29,14 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        backdrop-filter: blur(4px);
-        /* background-color: rgba(0, 0, 0, 0.3); */
+        backdrop-filter: blur(20px);
       }
 
       .container {
         width: fit-content;
         height: fit-content;
         padding: 50px;
-        border-radius: 1em;
+        border-radius: 0.5em;
       }
 
       .glass {
@@ -75,7 +74,6 @@
         display: inline-block;
         width: 110px;
         height: fit-content;
-        background-color: rebeccapurple;
       }
 
       .answer .no {
@@ -107,6 +105,7 @@
         overflow: visible;
         background-color: aliceblue;
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
         transition: 0.5s;
@@ -148,6 +147,18 @@
       .close-btn .line2 {
         transform: rotate(135deg);
       }
+
+      .yt-music {
+        margin: auto;
+      }
+
+      .form-message {
+        display: none;
+      }
+
+      .form-message.active {
+        display: block;
+      }
     </style>
   </head>
   <body>
@@ -163,7 +174,7 @@
           </div>
         </section>
       </div>
-      <div class="response">
+      <div class="response active">
         <div class="close-btn" onclick="removeActive()">
           <ul>
             <li class="line1"></li>
@@ -171,6 +182,23 @@
           </ul>
         </div>
         <h1>Awww ... terimakasih!</h1>
+        <!-- <button id="yt-music"></button> -->
+        <div></div>
+        <iframe
+          class="yt-music"
+          onclick="showMessage()"
+          width="560"
+          height="340"
+          src="https://www.youtube.com/embed/ThYGrYiyvA8?start=81"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+        <section class="form-message">
+          <textarea name="message" id="" cols="30" rows="10"></textarea>
+          <button>Kirim</button>
+        </section>
       </div>
     </main>
     <script>
@@ -192,6 +220,17 @@
         css.left = `${randomPosition}%`;
         console.log(randomPosition);
       }
+
+      function showMessage() {
+        // const formMessgae = document.querySelector('form-message');
+        // formMessgae.classList.add('active');
+        console.log('ok');
+      }
+
+      const ytMusic = document.querySelector('.yt-music');
+      ytMusic.addEventListener('click', (e) => {
+        console.log(e);
+      });
     </script>
   </body>
 </html>
