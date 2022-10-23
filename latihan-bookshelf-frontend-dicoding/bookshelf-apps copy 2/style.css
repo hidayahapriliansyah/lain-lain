@@ -1,14 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;700&display=swap');
 
-/* font-family: 'Playfair Display', serif;
-font-family: 'Work Sans', sans-serif; */
-
-/* color */
-/* 594545
-815B5B
-9E7676
-FFF8EA */
-
 * {
   padding: 0;
   margin: 0;
@@ -25,7 +16,6 @@ body {
   overflow-x: hidden;
 }
 
-
 header {
   width: 100vw;
   padding: 10px;
@@ -40,7 +30,10 @@ h2 {
   margin-bottom: 20px;
 }
 
-h1, h2, h3, p {
+h1,
+h2,
+h3,
+p {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
@@ -75,8 +68,6 @@ input {
   height: 30px;
   border-radius: 0.5em;
   border-style: none;
-  /* border-bottom: 1px #594545 solid;
-  border-right: 1px #594545 solid; */
   box-shadow: 2px 2px 2px rgba(123, 60, 60, 0.5);
   padding-left: 5px;
 }
@@ -101,7 +92,6 @@ form#inputBook .input input {
   display: flex;
   align-items: center;
   width: 100%;
-  /* background-color: #af4747; */
 }
 
 input[type='checkbox'] {
@@ -128,7 +118,6 @@ button {
   padding: 5px;
   border-radius: 0.5em;
   border-style: none;
-  /* border: 1px solid #9e7676; */
   cursor: pointer;
   background-color: #9e7676;
   color: #fff8ea;
@@ -227,10 +216,9 @@ input#searchBookTitle {
   box-shadow: 3px 3px 2px #9e7676;
   background-color: #ffe5b0;
   scroll-margin-top: 50px;
-  /* overflow: hidden; */
 }
 
-.book_item:first-child::before {
+.book_shelf .book_item:first-child::before {
   content: 'Terakhir ditambahkan/diedit';
   background-color: #9e7676;
   float: right;
@@ -337,16 +325,7 @@ button.close-edit {
   background-color: #af4747;
 }
 
-/* @media only screen and (max-width : 480px)  {
-  
-}
-@media only screen and (max-width : 768px)  {
-  body {
-    width: 100%;
-  }
-} */
-
-@media only screen and (min-width : 768px)  {
+@media only screen and (min-width: 768px) {
   body {
     display: flex;
     align-items: center;
@@ -359,7 +338,7 @@ button.close-edit {
   }
 }
 
-@media only screen and (min-width : 1024px)  {
+@media only screen and (min-width: 1024px) {
   body {
     display: flex;
     align-items: center;

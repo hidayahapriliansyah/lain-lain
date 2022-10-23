@@ -25,7 +25,6 @@ body {
   overflow-x: hidden;
 }
 
-
 header {
   width: 100vw;
   padding: 10px;
@@ -40,7 +39,10 @@ h2 {
   margin-bottom: 20px;
 }
 
-h1, h2, h3, p {
+h1,
+h2,
+h3,
+p {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
@@ -230,7 +232,7 @@ input#searchBookTitle {
   /* overflow: hidden; */
 }
 
-.book_item:first-child::before {
+.book_shelf .book_item:first-child::before {
   content: 'Terakhir ditambahkan/diedit';
   background-color: #9e7676;
   float: right;
@@ -346,7 +348,7 @@ button.close-edit {
   }
 } */
 
-@media only screen and (min-width : 768px)  {
+@media only screen and (min-width: 768px) {
   body {
     display: flex;
     align-items: center;
@@ -359,7 +361,7 @@ button.close-edit {
   }
 }
 
-@media only screen and (min-width : 1024px)  {
+@media only screen and (min-width: 1024px) {
   body {
     display: flex;
     align-items: center;

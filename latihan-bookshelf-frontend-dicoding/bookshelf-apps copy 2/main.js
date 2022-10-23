@@ -50,7 +50,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const spanDescription = document.querySelector('.shelfDesc');
     if (event.target.checked) {
       spanDescription.innerText = 'Selesai dibaca';
-      // console.log('ok');
     } else {
       spanDescription.innerText = ' Belum selesai dibaca';
     }
@@ -121,15 +120,6 @@ function generateBookObject(id, title, author, year, isFinished) {
 }
 
 function findIndexBook(bookId) {
-  // for (const bookItem of booksList) {
-  //   if (bookItem.id === bookId) {
-  //     return bookItem;
-  //   }
-  // }
-
-  // return null;
-  // salah ieu teh coy, fatal ....
-  //  hati hati sama for off for in
   for (const index in booksList) {
     if (booksList[index].id === bookId) {
       return index;
@@ -191,21 +181,6 @@ function removeBook(bookId) {
 }
 
 function saveEditedBook(book, newTitle, newAuthor, newYear, newStatus) {
-  // const bookItem = findIndexBook(book.id);
-  // if (bookItem === -1) return;
-  // if (
-  //   bookItem.title === newTitle &&
-  //   bookItem.year === newYear &&
-  //   bookItem.author === newAuthor &&
-  //   bookItem.isFinished === newStatus
-  // ) {
-  //   formEdit.remove();
-  //   for (const element of elementCollections) {
-  //     element.style.display = '';
-  //   }
-  //   return;
-  // }
-
   book.title = newTitle;
   book.author = newAuthor;
   book.year = newYear;
@@ -215,7 +190,6 @@ function saveEditedBook(book, newTitle, newAuthor, newYear, newStatus) {
 
   saveData();
   document.dispatchEvent(new Event(RENDER_EVENT_UI));
-  // document.dispatchEvent(new Event(RENDER_SEARCH_UI));
 }
 
 function showEditBookForm(event, book) {
@@ -228,7 +202,6 @@ function showEditBookForm(event, book) {
   const title = elementCollections[0].innerText;
   const author = elementCollections[1].innerText;
   const year = elementCollections[2].innerText;
-  // const isFinished = elementCollections[3];
 
   const formEdit = document.createElement('form');
   formEdit.classList.add('edit_mode');
@@ -321,8 +294,6 @@ function showEditBookForm(event, book) {
     }
 
     if (bookItemIndex !== -1) booksList.splice(bookItemIndex, 1);
-    // console.log(bookItem, bookItemIndex); return;
-    // console.log(bookItem); return;
 
     saveEditedBook(
       bookItem,
@@ -354,35 +325,7 @@ function showEditBookForm(event, book) {
     divActionEdit
   );
 
-  // console.log(title, author, year);
-  // console.log(formEdit);
-  // console.log(articleElement.children);
   articleElement.append(formEdit);
-
-  // function closeRandomClick(e) {
-  //   console.log(e.target);
-  //     if (e.target === formEdit || e.target.parentElement === formEdit || e.target.parentElement.parentElement === formEdit) return;
-  //     formEdit.remove();
-  //     for (const element of elementCollections) {
-  //       element.style.display = '';
-  //     }
-  // }
-
-  // function documentEvent() {
-  //   document.addEventListener('click', function (e) {
-  //     if (
-  //       e.target === formEdit ||
-  //       e.target.parentElement === formEdit ||
-  //       e.target.parentElement.parentElement === formEdit
-  //     )
-  //       return;
-
-  //     formEdit.remove();
-  //     for (const element of elementCollections) {
-  //       element.style.display = '';
-  //     }
-  //   });
-  // }
 
   setTimeout(() => {
     document.addEventListener('click', function documentEvent(e) {
@@ -404,17 +347,6 @@ function showEditBookForm(event, book) {
       document.removeEventListener('click', documentEvent);
     });
   }, 1);
-
-  // document.addEventListener('click', function (e) {
-  //   if (e.target === formEdit || e.target.parentElement === formEdit || e.target.parentElement.parentElement === formEdit) return;
-
-  //   formEdit.remove();
-  //   for (const element of elementCollections) {
-  //     element.style.display = '';
-  //   }
-  // });
-
-  // document.addEventListener('click', documentEvent);
 }
 
 function makeBooksUIElement(book, uiSearch = false) {
@@ -428,12 +360,6 @@ function makeBooksUIElement(book, uiSearch = false) {
     anchorBook.classList.add('anchor-book');
     anchorBook.addEventListener('click', function () {
       const articleTarget = document.getElementById('book-' + book.id);
-      // for(let i = 1; i <= 3; i++) {
-      //   setTimeout(() => {
-      //     console.log(i);
-      //   }, 1000);
-      // }
-      // for (let i = 1; i <= 2; i++) {
       const changeArticleBackground = setInterval(function () {
         articleTarget.style.backgroundColor = '#fff8ea';
         setTimeout(() => {
@@ -443,7 +369,6 @@ function makeBooksUIElement(book, uiSearch = false) {
       setTimeout(() => {
         clearInterval(changeArticleBackground);
       }, 1000);
-      // }
     });
 
     const spanDetailBook = document.createElement('span');
@@ -513,7 +438,6 @@ function makeBooksUIElement(book, uiSearch = false) {
 }
 
 // custom event
-
 document.addEventListener(RENDER_SEARCH_UI, function () {
   const elementOfbookSearchResult = document.getElementById('bookSearchResult');
   elementOfbookSearchResult.innerHTML = '';
@@ -538,8 +462,6 @@ document.addEventListener(RENDER_EVENT_UI, function () {
   const completeBooks = document.getElementById('completeBookshelfList');
   completeBooks.innerHTML = '';
 
-  // console.log(booksList);
-
   for (const book of booksList.reverse()) {
     const bookElement = makeBooksUIElement(book);
     if (book.isFinished === true) {
@@ -547,7 +469,6 @@ document.addEventListener(RENDER_EVENT_UI, function () {
     } else {
       inCompleteBooks.append(bookElement);
     }
-    // ini emang kudu make append, hese make innerHtml mah
   }
 
   function noBookInfo() {
