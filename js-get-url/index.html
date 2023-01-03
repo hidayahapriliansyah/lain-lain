@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dokumen</title>
+</head>
+<body>
+  <h1>Ini adalah halaman Dokumen</h1>
+  <div class="container">
+    <form action="" method="GET">
+      <div>
+        <label for="city">Kota</label>
+        <input type="text" id="city" placeholder="Isi nama kota" name="city" autocomplete="off">
+      </div>
+      <div>
+        <label for="country">Negara</label>
+        <input type="text" id="country" placeholder="Isi nama negara" name="country" autocomplete="off">
+      </div>
+      <input type="submit">
+    </form>
+
+  </div>
+  <script>
+    const { search: query } = window.location;
+
+    const renderQuery = (search) => {
+      if(search) {
+        newSearch = search.replace('?', '').split('&');
+        const obj = {};
+        newSearch.forEach((el) => {
+          const data = el.split('=');
+          obj[data[0]] = data[1];
+        });
+        return obj;
+      }
+    }
+
+    const obj = renderQuery(query);
+
+    console.log(obj);
+  </script>
+</body>
+</html>

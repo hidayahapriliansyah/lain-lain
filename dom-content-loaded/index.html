@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Content Loaded</title>
+  <style>
+    .loaded {
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      z-index: 99;
+      background-color: red;
+    }
+
+    .img-load {
+      background: url('/img/loading.gif');
+      background-size: cover;
+      background-repeat: no-repeat;
+      width: 300px;
+      height: 300px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div>Hello</div>
+  </div>
+  
+  <script>
+    // const ready = () => {
+    //   console.log('Document is ready');
+    // }
+
+    document.body.addEventListener('load', () => {
+      const loadEl = document.createElement('div');
+      loadEl.classList.add('loaded');
+      
+      const loadImg = document.createElement('img');
+      loadImg.classList.add('img-load');
+      
+      loadEl.append(loadImg);
+      document.body.append(loadEl);
+      console.log('ok');
+    });
+    // document.addEventListener('DOMContentLoaded', ready);
+
+    const container = document.querySelector('.container');
+    for (let i = 0; i < 10000; i++) {
+      const hello = document.createElement('div');
+      hello.innerText = 'Hello';
+      container.append(hello);
+    }
+    
+    const loadContent = () => {
+      const loadEl = document.createElement('div');
+      loadEl.classList.add('loaded');
+      
+      const loadImg = document.createElement('img');
+      loadImg.classList.add('img-load');
+      
+      loadEl.append(loadImg);
+      document.body.append(loadEl);
+    }
+    
+    const finishLoaded = () => {
+      const loadEl = document.querySelector('.loaded');
+      console.log(loadEl);
+    };
+
+    // document.readyState !== 'complete' ? finishLoaded() : loadContent();
+  </script>
+</body>
+</html>

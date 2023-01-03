@@ -1,0 +1,49 @@
+Saat try catch
+block catch akan menangkap promise pertama. alias kalau kita pake buat ngefetch pake async await maka si catch ini cuma bakal nangkep network error, yang mana itu adalah promise reject pertama.
+
+kalau di fetch, then pertama nangkep promise pertama yang mana hasil dari koneksi ke network.
+then yang kedua promise response.
+
+nah si try catch, perlu handling response supaya bisa nge throw error kalau response nya not ok.
+
+oohhhh berarti kieu nya ...
+
+fetchh -> kalau promise nya reject maka fetch akan ngelempar error ke catch ->
+kalau promise nya fulfill, maka si fetch bakal ngembaliin object Response.
+
+AWWW ... APA INI ...
+JADI SEBENARNYA ITU 
+try throw catch
+pertanyaan :
+1. kenapa saat tidak pakai await si fetch ngembaliin promise?
+sedangkan kalau pakai ngembaliin response?
+
+jawaban : kan si .... kela
+
+oh kieu ...
+ini konteksnya try catch ya ...
+kenapa pas fetch pakai await? karena fetch itu function yang berjalan asynchronous. kenapa asyn?
+karena dia itu ngambil data dari sumber lain dulu, gak bisa langsung jadi. ada waktu proses nya.
+jadi untuk menunggu hasil dari fetch agar komputer tidak menjalan program ke baris lain,
+maka pakai fetch.
+
+nah terus kenapa sekarang kalau response pakai await juga? nah btw si fetch tadi kan pakai await ya?
+kalau udah selesai ngefetch nya dia bakal ngembaliin object Response. kalau belum selesai alias gak pakai
+await terus kita tiba tiba maksa nge console.log si fetch maka bakal ngembaliin promise.
+Ok, kita asumsiin response itu hasil dari await fetch ya ... maka response bakal ngasilin object Response.
+
+2. bagaimana jika dalam 1 blok try terdapat 2 line yang menghasilkan error?
+si cathcnya bakal ngambil yang mana?
+
+3. Kudu diajar set map euy
+
+kesimpulan :
+banyak resource api, yang masing masing ngasih response beda beda, yang harus digaris bawahi di sini adalah response errornya. ada yang ngasih kode pake nama cod, pake nama status dll. untuk itu cek setiap !reponse.ok
+dari masing masing api agar terlihat skema error handling nya.
+
+semua fethc pasti bakal ngasih network error, kembali lagi gali error response nya. perkirakan setiap skenario
+error response nya. misalnya asa api yang endpointnya wajib menambahkan parameter nama kota dan key. bagaimana
+jika nama kota nya tidak diisi? bagaimana jika nama kotanya salah? bagaimana jika kota yang dicari tidak ada?
+bagaimana jika key yang dimasukkan salah? 
+
+

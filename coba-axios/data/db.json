@@ -1,0 +1,22 @@
+{
+  "books" : [
+    {
+      "id": 1,
+      "title": "Hello Book 1",
+      "author": "Adi Muhamad Firmansyah",
+      "year": 2022
+    },
+    {
+      "id": 2,
+      "title": "Hello Book 2",
+      "author": "Adi Muhamad Firmansyah",
+      "year": 2023
+    },
+    {
+      "id": 3,
+      "title": "Hello Book 3",
+      "author": "Adi Muhamad Firmansyah",
+      "year": 2024
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "openai": "^3.1.0"
+  },
+  "name": "api-chat-gpt",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "start": "node ./src/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

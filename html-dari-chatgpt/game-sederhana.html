@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Simple Game</title>
+</head>
+<body>
+	<h1>Simple Game</h1>
+	<p>Click on the button below to start the game!</p>
+	<button id="startButton">Start</button>
+	<div id="gameContainer" style="display: none;">
+		<div id="score">0</div>
+		<canvas id="gameCanvas" width="600" height="600"></canvas>
+	</div>
+	<script>
+		const startButton = document.getElementById('startButton');
+		const gameContainer = document.getElementById('gameContainer');
+		const gameCanvas = document.getElementById('gameCanvas');
+		const scoreElement = document.getElementById('score');
+		let score = 0;
+
+		startButton.addEventListener('click', () => {
+			gameContainer.style.display = 'block';
+			startButton.style.display = 'none';
+			startGame();
+		});
+
+		const startGame = () => {
+			// Todo: implement game logic here
+		};
+	</script>
+</body>
+</html>
