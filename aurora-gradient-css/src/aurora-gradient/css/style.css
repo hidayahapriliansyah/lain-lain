@@ -679,6 +679,11 @@ video {
   background-color: rgb(178 231 130 / var(--tw-bg-opacity));
 }
 
+.bg-slate-900 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(15 23 42 / var(--tw-bg-opacity));
+}
+
 .text-center {
   text-align: center;
 }
@@ -689,6 +694,10 @@ video {
 
 .underline {
   text-decoration-line: underline;
+}
+
+.mix-blend-overlay {
+  mix-blend-mode: overlay;
 }
 
 .outline {

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Carousel</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    .container {
+      width: 80%;
+      height: fit-content;
+      padding: 20px;
+      margin: auto;
+      box-shadow: 4px 4px 10px grey;
+      border-radius: 1rem;
+      overflow-x: scroll;
+    }
+
+    .container::-webkit-scrollbar {
+      background-color: transparent;
+      height: 10px;
+    }
+    .container::-webkit-scrollbar-thumb {
+      background-color: gray;
+      border-radius: 50px;
+    }
+
+    .grid {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: max-content;
+      gap: 10px;
+      width: fit-content;
+      padding: 10px;
+      background-color: blueviolet;
+    }
+
+    .content-1 {
+      display: grid;
+      place-items: center;
+      width: 100px;
+      height: 100px;
+      background-color: aqua;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="container">
+      <div class="grid">
+        <div class="content-1">Content</div>
+        <div class="content-1">Content</div>
+        <div class="content-1">Content</div>
+        <div class="content-1">Content</div>
+        <div class="content-1">Content</div>
+        <div class="content-1">Content</div>
+        <div class="content-1">Content</div>
+        <div class="content-1">Content</div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
