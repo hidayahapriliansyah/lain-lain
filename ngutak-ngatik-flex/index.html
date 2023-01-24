@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ngutak Ngatik Flex</title>
+    <style>
+      .container {
+        width: 500px;
+        height: 500px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        background-color: red;
+      }
+
+      .item {
+        width: 100px;
+        border: 2px solid black;
+        /* flex: 1; */
+        /* flex-grow: 2;
+        flex-shrink: 1;
+        flex-basis: 0; */
+      }
+
+      .item-1 {
+        flex-grow: 1;
+        flex-shrink: 2;
+        flex-basis: 2;
+      }
+
+      .item-2 {
+        flex-grow: 2;
+        /* flex-shrink: 1; */
+        /* flex-basis: 2; */
+      }
+
+      .item-3 {
+        flex-grow: 3;
+      }
+
+      .item-4 {
+        flex-grow: 4;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item item-1">1</div>
+      <div class="item item-2">2</div>
+      <div class="item item-3">3</div>
+      <div class="item item-4">4</div>
+    </div>
+  </body>
+</html>
