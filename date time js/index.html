@@ -10,6 +10,7 @@
   <form class="time-form">
     <input type="time" class="time" name="time">
     <input type="date" class="date" name="time">
+    <input type="datetime" class="date" name="time">
     <input type="datetime-local" class="datetime" name="time">
     <button type="submit">Submit</button>
   </form>
@@ -27,6 +28,7 @@
       console.log('time', time.value);
       console.log('date', date.value);
       console.log('datetime', datetime.value);
+      console.log(new Date('2023-02-28T10:00').getDate());
     })
   </script>
 </body>

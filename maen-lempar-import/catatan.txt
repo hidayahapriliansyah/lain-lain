@@ -1,0 +1,42 @@
+jika
+
+export default {
+  pedas,
+}
+
+maka tidak bisa melakuakn 
+import { pedas } from './makanan.js'
+
+karena yang diexport itu object key default
+
+jadi kalau mau
+import { pedas } from './makanan.js'
+
+harus langsung 
+export {
+  pedas,
+};
+
+supaya si pedasnya bisa langsung diakses ketika import
+
+terus 
+import * as makanan from './makanan.js'
+
+bisa dilakukan baik dari export default atau langsung export.
+
+bedanya jika export default makan akan 
+    [Module: null prototype] {
+      default: {
+        pedas: [ 'seblak', 'pentol', 'sambal', 'cengek', 'kata kata Anda' ],
+        gurih: [ 'bala-bala', 'gehu', 'kurupuk' ],
+        manis: [ 'kue', 'bolu', 'curo', 'donat', 'roti', 'permen' ]
+      }
+    }
+
+
+kalau export langsung hasilnya :
+    [Module: null prototype] {
+      gurih: [ 'bala-bala', 'gehu', 'kurupuk' ],
+      manis: [ 'kue', 'bolu', 'curo', 'donat', 'roti', 'permen' ],
+      pedas: [ 'seblak', 'pentol', 'sambal', 'cengek', 'kata kata Anda' ]
+    }
