@@ -21,7 +21,7 @@ const manis = [
   'permen',
 ];
 
-export default {
+export {
   pedas,
   gurih,
   manis,

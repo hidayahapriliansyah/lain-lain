@@ -24,7 +24,7 @@ import * as makanan from './makanan.js'
 
 bisa dilakukan baik dari export default atau langsung export.
 
-bedanya jika export default makan akan 
+bedanya jika export default maka akan 
     [Module: null prototype] {
       default: {
         pedas: [ 'seblak', 'pentol', 'sambal', 'cengek', 'kata kata Anda' ],
@@ -32,7 +32,7 @@ bedanya jika export default makan akan
         manis: [ 'kue', 'bolu', 'curo', 'donat', 'roti', 'permen' ]
       }
     }
-
+jadi si object disimpan di property default
 
 kalau export langsung hasilnya :
     [Module: null prototype] {
@@ -40,3 +40,4 @@ kalau export langsung hasilnya :
       manis: [ 'kue', 'bolu', 'curo', 'donat', 'roti', 'permen' ],
       pedas: [ 'seblak', 'pentol', 'sambal', 'cengek', 'kata kata Anda' ]
     }
+ini mah langsung

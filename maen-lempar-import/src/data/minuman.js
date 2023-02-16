@@ -1,3 +1,3 @@
-const pahit = [kopi];
+const pahit = ['kopi'];
 
-export default pahit;
+export { pahit };
