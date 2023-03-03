@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coba Websocket</title>
+</head>
+<body>
+  
+  <script>
+    // mengirim data ke websocket
+
+    // menghubungkan ke websocket
+    const webSocket = new WebSocket('wss://contoh.com/socketserver');
+
+    // mengirim data ke websocket server
+    // yang dikirim bisa berupa string, blob, atau array buffer
+
+    // onopen adalah event ketika websocket terhubung dengan websocket server
+    webSocket.onopen= (event) => {
+      // kriim data berupa json stringify
+      const data = {
+        type: 'message',
+        text: document.querySelector('#text').value,
+        date: Date.now(),
+      };
+
+      webSocket.send('Some data, or message. ARHKJARHHAKJRHKJARH');
+      webSocket.send(JSON.stringify(data));
+
+      // menangkap data yang dikirm oleh server
+      webSocket.onmessage = (event) => {
+        const data = JSON.parse(event.data);
+        console.log(data);
+      };
+    }
+
+    // close websocket
+    const closeWebSocket = (websocket) => {
+      if (!webSocket.bufferedAmount) {
+        websocket.close();
+        return;
+      }
+
+      throw new Error('Pendinng data is still available');
+    };
+
+    // menambahkan logika ketika close (close itu event ya)
+    websocket.onclose = (event) => {
+      console.log('Websocket connection was closed!');
+    }
+    // Koneksi WebSocket juga akan tertutup otomatis bila tab atau browser web ditutup.
+  </script>
+</body>
+</html>

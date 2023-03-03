@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+  </style>
+  <title>Coba Notifikasi</title>
+</head>
+<body>
+  <h1>Coba Notifikasi</h1>
+
+  <script>
+    const requestPermission = async () => {
+      // meminta izin memunculkan notifkasi
+      const result = await Notification.requestPermission();
+      console.log(result);
+
+      if (result === 'denied') {
+        console.log('Fitur notifikasi tidak diizinkan');
+        return;
+      }
+
+      if (result === 'default') {
+        console.log('Pengguna menutup kotak dialog permintaan izin');
+        return;
+      }
+
+      console.log('Fitur notifikasi diizinkan');
+    };
+
+    if ('Notification' in window) {
+      requestPermission();
+    }
+
+  </script> 
+</body>
+</html>
